@@ -1,6 +1,7 @@
 {
   "name": "next-isr-auto-revalidate",
   "version": "0.0.1",
+  "homepage": "https://github.com/kai101/next-isr-auto-revalidate#readme",
   "scripts": {
     "test": "yarn jest --detectOpenHandles",
     "typecheck": "yarn tsc --project ./tsconfig-typecheck.json",
@@ -14,6 +15,14 @@
   "license": "MIT",
   "files": [
     "dist/"
+  ],
+  "keywords": [
+    "ISR",
+    "next",
+    "nextJS",
+    "schedule",
+    "auto",
+    "revalidate"
   ],
   "devDependencies": {
     "@types/jest": "^27.0.2",

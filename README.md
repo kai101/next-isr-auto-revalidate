@@ -1,6 +1,11 @@
 # Next ISR Auto Revalidate
 
-This plugins is made to help auto revalidate important page below 60 seconds.
+This plugins is made to help auto revalidate important pages below 60 seconds.
+
+## Problem statements
+ISR revalidate during the first call to page after the cache is expired. How do we ensure that the page revalidate consistently even before the first call to the expired page?
+
+Here is the solution, this package helped self hosted nextJS application to revalidate over a fix period of time. This would ensures the cache are being renewed consistently everytime for important page like a home page. 
 
 ## Usage
 
@@ -23,9 +28,9 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   autoRevalidate(
-    res, // response object from API
-    ['/posts/1'], // list of page to regenerate
-    5 // period of revalidate in seconds
+    res,          // Response object from API
+    ['/posts/1'], // List of page to regenerate
+    5             // Period of revalidate in seconds
   )
   return res.json({ revalidated: true});
 }
@@ -33,9 +38,9 @@ export default async function handler(
 
 ### Final Step
 
-```bash
+```sh
 npm run build
 npm run start
 ```
 
-Call the api endpoint for `/api/revalidate` and verify revalidate.
+Call the api endpoint for `/api/revalidate` to start the scheduler and verify revalidate.
